@@ -1,10 +1,12 @@
 import Foundation
+import SwiftUI
 
 class Navigation: ObservableObject {
-	@Published var paths: [String]
+	@Published var paths: NavigationPath
 	
 	init() {
-		paths = []
+		let emptyStringArray: [String] = []
+		paths = NavigationPath(emptyStringArray)
 	}
 	
 	func login() {

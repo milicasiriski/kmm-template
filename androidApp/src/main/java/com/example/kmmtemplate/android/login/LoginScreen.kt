@@ -21,10 +21,10 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.style.TextAlign
 import androidx.navigation.NavController
 import com.example.kmmtemplate.android.R
+import com.example.kmmtemplate.android.login.views.PasswordTextField
 import com.example.kmmtemplate.android.navigation.home
 import com.example.kmmtemplate.android.views.ButtonWithLoadingIndicator
 import com.example.kmmtemplate.android.views.ErrorBanner
-import com.example.kmmtemplate.android.login.views.PasswordTextField
 import org.koin.androidx.compose.getViewModel
 
 @Composable
@@ -92,7 +92,9 @@ fun LoginScreen(
 
         ButtonWithLoadingIndicator(
             loading = viewModel.loading.value,
-            onClick = { viewModel.login { navController.home() } },
+            onClick = {
+                viewModel.login(onSuccess = { navController.home() })
+            },
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(horizontal = dimensionResource(id = R.dimen.padding_medium))
