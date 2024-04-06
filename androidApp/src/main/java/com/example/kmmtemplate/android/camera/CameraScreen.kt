@@ -6,8 +6,6 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Button
 import androidx.compose.material3.MaterialTheme
@@ -60,6 +58,7 @@ fun CameraScreen(
     } else {
         Column(
             verticalArrangement = Arrangement.Center,
+            horizontalAlignment = Alignment.CenterHorizontally,
             modifier = Modifier
                 .padding(bottom = dimensionResource(id = R.dimen.padding_medium))
         ) {
@@ -73,10 +72,7 @@ fun CameraScreen(
 
             // Open App settings to help users give the necessary permissions
             Button(
-                onClick = { permissionsProvider.openSettings() },
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .height(dimensionResource(id = R.dimen.button_height))
+                onClick = { permissionsProvider.openSettings() }
             ) {
                 Text(text = "Open settings")
             }

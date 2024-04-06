@@ -15,7 +15,7 @@ fun Navigation(
     finish: () -> Unit,
     permissionsProvider: PermissionsProvider
 ) {
-    NavHost(navController = navController, startDestination = Routes.home) {
+    NavHost(navController = navController, startDestination = Routes.login) {
         composable(Routes.login) {
             LoginScreen(
                 navController = navController
