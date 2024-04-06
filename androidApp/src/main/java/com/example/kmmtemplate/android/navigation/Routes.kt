@@ -5,6 +5,7 @@ import androidx.navigation.NavController
 object Routes {
     const val login = "login"
     const val home = "home"
+    const val camera = "camera"
 }
 
 // Kotlin support extension functions
@@ -16,4 +17,8 @@ fun NavController.login() {
 
 fun NavController.home() {
     navigate(Routes.home)
+}
+
+fun NavController.camera() {
+    navigate(Routes.camera)
 }
