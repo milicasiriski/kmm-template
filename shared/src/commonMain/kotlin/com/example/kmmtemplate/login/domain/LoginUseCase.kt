@@ -9,7 +9,7 @@ class LoginUseCase(
     private val accountService: AccountService,
     private val localStorage: LocalStorage
 ) {
-    suspend fun invoke(email: String, password: String): Either<LoginUseCaseError, Unit> {
+    suspend operator fun invoke(email: String, password: String): Either<LoginUseCaseError, Unit> {
         val credentials = LoginCredentials(email, password)
         val result = accountService.login(credentials = credentials)
         when (result) {

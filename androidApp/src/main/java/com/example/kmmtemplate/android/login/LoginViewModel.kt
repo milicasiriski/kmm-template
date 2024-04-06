@@ -35,7 +35,7 @@ class LoginViewModel(private val login: LoginUseCase) : ViewModel() {
                 return@launch
             }
 
-            val result = login.invoke(email = email.value, password = password.value)
+            val result = login(email = email.value, password = password.value)
 
             if (result is Either.Right) {
                 _error.value = null

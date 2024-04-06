@@ -1,4 +1,5 @@
 import SwiftUI
+import shared
 
 @main
 struct iOSApp: App {
@@ -20,6 +21,9 @@ struct iOSApp: App {
 								default:
 									LoginScreen()
 							}
+						}
+						.navigationDestination(for: Item.self) { item in
+							ItemScreen(item: item)
 						}
 				}
 				.environmentObject(navigation)
